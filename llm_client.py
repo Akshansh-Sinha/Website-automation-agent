@@ -266,7 +266,7 @@ class LLMClient:
         for attempt in range(1, max_retries + 1):
             try:
                 response = self._client.models.generate_content(
-                    model="gemini-2.0-flash",
+                    model="gemini-2.5-flash",
                     contents=self._messages,
                     config=types.GenerateContentConfig(
                         system_instruction=SYSTEM_PROMPT,
