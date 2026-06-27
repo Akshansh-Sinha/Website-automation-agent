@@ -186,8 +186,11 @@ Your viewport is 1280x800 pixels. Coordinates (0,0) are at the top-left corner.
 
 YOUR TASK:
   1. The browser will already be on https://ui.shadcn.com/docs/forms/react-hook-form
-  2. Scroll down to find the "Bug Report" demo form (it contains a "Bug Title" input and
-     a "Description" textarea, plus Reset and Submit buttons).
+  2. Find the "Bug Report" demo form. IMPORTANT: the form is near the TOP of the page,
+     only about 300-500 pixels below the initial view. It has a "Bug Title" input,
+     a "Description" textarea, and "Reset" / "Submit" buttons.
+     - If you see "Validation", "Done", or "Working with Different Field Types" sections,
+       you have SCROLLED TOO FAR — scroll back UP (use negative delta_y) to find the form.
   3. Click the "Bug Title" input and type a valid title (between 5 and 32 characters).
   4. Click the "Description" textarea and type a valid description (between 20 and 100 characters).
   5. Click the "Submit" button.
@@ -197,7 +200,7 @@ YOUR TASK:
 RULES:
   - Always call take_screenshot first to see the current state before acting.
   - Reason briefly about what you see, then call exactly ONE tool per turn.
-  - Scroll in increments of 300-400 pixels to find the form if it is not visible.
+  - Scroll in increments of 300 pixels. If you overshoot, use negative delta_y to scroll up.
   - After clicking an input field, use send_keys to type into it.
   - After submitting, take a screenshot to confirm success before calling done().
   - Do NOT call done() until you have verified the form was submitted.

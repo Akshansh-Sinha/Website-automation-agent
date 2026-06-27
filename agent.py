@@ -178,7 +178,12 @@ async def run_agent() -> None:
 
             # --- Capture a fresh screenshot for the next iteration ---
             # This will be sent together with `result` as one user message.
-            shot = await tools.take_screenshot()
+            # Guard against a closed browser (e.g. after a fatal tool error).
+            try:
+                shot = await tools.take_screenshot()
+            except Exception as exc:
+                print(f"[Agent] Could not take screenshot after tool error: {exc}")
+                break
 
             # --- Carry result forward to be included in next user message ---
             prev_tool_name = tool_name
